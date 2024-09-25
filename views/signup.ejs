@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/signup.css">
+    <script>
+        async function inscrireUtilisateur(event) {
+            event.preventDefault();
+
+            const nom = document.getElementById('nom').value;
+            const email = document.getElementById('email').value;
+            const mot_de_passe = document.getElementById('mot_de_passe').value;
+
+            try {
+                const response = await fetch('http://localhost:3000/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nom, email, mot_de_passe })
+                });
+                
+                const result = await response.text();
+                alert(result);
+
+                if (response.ok) {
+                    window.location.href = '/login';
+                }
+            } catch (error) {
+                console.error('Erreur lors de l\'inscription :', error);
+                alert('Erreur lors de l\'inscription.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Inscription</h1>
+        <form onsubmit="inscrireUtilisateur(event)">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required><br>
+
+            <label for="email">E-mail :</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="mot_de_passe">Mot de passe :</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" required><br>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+</body>
+</html>

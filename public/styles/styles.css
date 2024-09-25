@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('/images/plage-de-lingreville-f5bb40e3-7fc5-4de6-ac84-1eb541a5a72f.jpg');
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-right {
+    display: flex;
+    gap: 10px;
+    border-radius: 2px;
+  }
+  
+  .navbar-left a {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+   
+  }
+  
+  .navbar-logo {
+    height: 50px; 
+    margin-right: 20px;
+    border-radius: 7px;
+    margin-left: 40px;
+  }
+  
+  .navbar-right a {
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .navbar-right a:hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 5px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .navbar-logo {
+    height: 50px;
+  }
+  
+  .hero-section {
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+  
+  .hero-text {
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #45a049;
+  }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  

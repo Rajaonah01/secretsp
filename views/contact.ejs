@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <link rel="shortcut icon" href="images/icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Contactez-nous</h1>
+    </header>
+
+    <main class="contact-container">
+        <section class="contact-form">
+            <h2>Nous envoyer un message</h2>
+            <form action="/submit-contact-form" method="POST">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+
+        <section class="contact-info">
+            <h2>Informations de contact</h2>
+            <p>Email : Secret@secretspeak.com</p>
+            <p>Téléphone : +261 34 16 630 46</p>
+            <p>Adresse : 101 Antananarivo Madagascar</p>
+        </section>
+    </main>
+</body>
+</html>

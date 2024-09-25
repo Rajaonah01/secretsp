@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envoyer un message anonyme</title>
+    <link rel="stylesheet" href="/styles/welcome.css">
+</head>
+<body>
+    <<form id="emailForm">
+        <label for="to">Destinataire :</label>
+        <input type="email" id="to" required><br>
+      
+        <label for="subject">Sujet :</label>
+        <input type="text" id="subject" required><br>
+      
+        <label for="text">Message :</label>
+        <textarea id="text" required></textarea><br>
+      
+        <button type="submit">Envoyer</button>
+      </form>
+      
+      <script>
+      document.getElementById('emailForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+      
+        const to = document.getElementById('to').value;
+        const subject = document.getElementById('subject').value;
+        const text = document.getElementById('text').value;
+      
+        try {
+          const response = await fetch('/send-message', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ to, subject, text })
+          });
+          const result = await response.json();
+          alert(result.message);
+        } catch (error) {
+          console.error('Erreur lors de l\'envoi:', error);
+        }
+      });
+      </script>
+      
+</body>
+</html>
